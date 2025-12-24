@@ -1,10 +1,18 @@
+type LessonBlock =
+  | { type: "text"; text: string }
+  | { type: "heading"; text: string }
+  | { type: "code"; text: string }
+  | { type: "important"; text: string }
+  | { type: "tip"; text: string };
+
 export const lessonContent: Record<
   string,
   {
     title: string;
-    content: string[];
+    content: LessonBlock[];
   }
 > = {
+
  /* =========================
    SECTION 0 – ML INTRODUCTION
    ========================= */
@@ -66,7 +74,7 @@ export const lessonContent: Record<
 
 
 
- "python-introduction": {
+ "python-Introduction": {
   title: "Introduction to Python for Machine Learning",
   content: [
     {

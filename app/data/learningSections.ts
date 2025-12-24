@@ -4,7 +4,7 @@ export const learningSections = [
      (Overview only)
   ========================= */
   {
-    id: "ml-introduction",
+    id: "ml-Introduction",
     title: "Machine Learning Introduction",
     items: [
       {

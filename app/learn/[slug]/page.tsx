@@ -36,10 +36,10 @@ export default function LessonPage({ params }: Props) {
     setCompleted(
       isLessonCompleted(
         slug,
-        session?.user?.email
+        session?.user?.email?? undefined
       )
     );
-  }, [slug, session?.user?.email]);
+  }, [slug, session?.user?.email?? undefined]);
 
   /* ⛔ Nothing below this should affect hook order */
 
@@ -61,13 +61,16 @@ export default function LessonPage({ params }: Props) {
   const prevTopic = allLessons[topicIndex - 1];
   const nextTopic = allLessons[topicIndex + 1];
 
-  function handleComplete() {
-    markLessonComplete(
-      slug,
-      session?.user?.email
-    );
-    setCompleted(true);
-  }
+ function handleComplete() {
+  if (!slug) return;
+
+  markLessonComplete(
+    slug,
+    session?.user?.email ?? undefined
+  );
+
+  setCompleted(true);
+}
 
   /* 🔒 LOGIN GATE */
   if (status !== "loading" && !session) {
@@ -169,12 +172,16 @@ export default function LessonPage({ params }: Props) {
         {completed ? (
           <button
             onClick={() => {
-              unmarkLessonComplete(
-                slug,
-                session?.user?.email
-              );
-              setCompleted(false);
-            }}
+  if (!slug) return;
+
+  unmarkLessonComplete(
+    slug,
+    session?.user?.email ?? undefined
+  );
+
+  setCompleted(false);
+}}
+
             className="text-xs rounded-md bg-gray-500 px-3 py-1 text-white"
           >
             Mark as incomplete

@@ -37,7 +37,7 @@ export default function Navbar() {
   }, []);
 
  /* 🔹 Local progress listener (USER AWARE) */
-const userEmail = session?.user?.email;
+const userEmail = session?.user?.email?? undefined;
 
 useEffect(() => {
   function updateProgress() {
