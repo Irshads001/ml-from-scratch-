@@ -166,7 +166,7 @@ export default function HomePage() {
     </p>
 
     <a
-      href="/learn/python-installation"
+      href="/learn/python-environment-setup"
       className="inline-flex items-center justify-center rounded-md bg-blue-600 px-8 py-3 text-white font-medium hover:bg-blue-700 transition"
     >
       Start Learning Now
