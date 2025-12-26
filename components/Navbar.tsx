@@ -91,15 +91,15 @@ useEffect(() => {
       .toUpperCase() ?? "U";
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b">
-      <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+    <nav className="sticky top-0 z-50 bg-white border-b h-14">
+      <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <span className="flex h-8 w-8 items-center justify-center rounded-md bg-blue-600 text-white text-sm font-bold tracking-tight">
             ML
           </span>
 
-          <span className="flex flex-col leading-tight">
+          <span className="flex flex-col leading-tight whitespace-nowrap">
             <span className="text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition">
               ML From Scratch
             </span>
@@ -178,9 +178,10 @@ useEffect(() => {
 
           {/* Course Progress */}
           <div
-            title={`${progress}% course completed`}
-            className="ml-4 relative w-9 h-9 cursor-default hover:scale-[1.03] transition-transform"
-          >
+  title={`${progress}% course completed`}
+  className="ml-3 relative w-9 h-9 shrink-0 overflow-hidden"
+>
+
             <svg
               className="w-full h-full rotate-[-90deg]"
               viewBox="0 0 36 36"
